@@ -5,17 +5,23 @@ interface SearchInputProps {
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   count?: number;
 }
+
+const isAlphanumeric = (value: string) => /^[a-zA-Z0-9\s]*$/.test(value);
+
 const SearchInput = ({ search, setSearch, count }: SearchInputProps) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    if (isAlphanumeric(value)) {
+      setSearch(value);
+    }
+  };
   return (
     <div data-testid="search-input" className="py-3 space-y-3">
       <input
         className="border-b-[0.5px] border-neutral-400 pb-1 w-full placeholder:font-light focus:outline-none focus:ring-0 focus:border-neutral-400"
         value={search}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-          const value = e.target.value;
-          const onlyLetters = value.replace(/[^a-zA-Z\s]/g, "");
-          setSearch(onlyLetters);
-        }}
+        onChange={handleChange}
         placeholder={STRINGS.pages.productList.searchPlaceholder}
       />
 

@@ -1,54 +1,100 @@
-# React + TypeScript + Vite
+# Phone Shop App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive e-commerce web app for browsing and purchasing smartphones, built with React, TypeScript, and Tailwind CSS. This project was developed as a technical challenge for Zara.
 
-Currently, two official plugins are available:
+Deployed version - [Live Demo](https://phone-shop-app-1c10f.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clone git repository: https://github.com/yoelnoy/phone-shop-app.git
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧠 Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- 🔍 Search and filter phones by brand or name
+- 📄 View detailed specifications
+- 🛒 Add to cart, update quantities, and remove items
+- 🧪 Fully tested with Jest and React Testing Library
+- ⚛️ React 18 with Context API and TanStack Query
+- 💅 Tailwind CSS styling
+- 📦 Firebase deployment
+
+---
+
+## ⚙️ Project Structure
+
+```
+src/
+├── components/         # Shared UI components
+├── context/            # Cart context provider
+├── hooks/              # Custom React hooks
+├── layouts/            # Layout wrappers
+├── pages/              # Route-level pages (PhoneList, Cart, etc.)
+├── tests/              # Centralized test files
+├── types/              # TypeScript types
+└── constants/          # Static strings and app-wide constants
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Environment Variables
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+To run the app locally, create a `.env` file in the root of the project with the following variable:
+
 ```
+VITE_BASE_URL="https://prueba-tecnica-api-tienda-moviles.onrender.com"
+VITE_API_KEY="87909682e6cd74208f41a6ef39fe4191"
+```
+
+> 🔐 These keys are required to access the API. If you're missing these values, contact the project owner or replace the API logic with mock data for local testing.
+
+---
+
+## Running the App
+
+### Development Mode
+
+Serves unminified assets and enables live reload:
+
+```bash
+npm install
+npm run dev
+```
+
+### Production Mode
+
+Builds and serves optimized/minified assets:
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 🧪 Running Tests
+
+```bash
+npm test
+```
+
+Tests are written using Jest and React Testing Library. Test files are located in the `src/tests` directory.
+
+---
+
+## 🚀 Deployment
+
+The app is deployed on Firebase:
+
+👉 [https://phone-shop-app-1c10f.web.app](https://phone-shop-app-1c10f.web.app)
+
+---
+
+## 📁 Git & Ignore
+
+This Vite project includes a `.gitignore` file to exclude `node_modules`, `.env`, and build artifacts.
+
+---
+
+## 👨‍💻 Author
+
+Yoel Noy Dvir — [GitHub](https://github.com/yoelnoy)

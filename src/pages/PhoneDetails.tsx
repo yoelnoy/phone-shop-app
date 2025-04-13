@@ -139,7 +139,7 @@ function PhoneDetails() {
                         quantity: 1,
                       });
                     }}
-                    className={`w-full py-3 mt-8 text-sm cursor-pointer ${
+                    className={`w-full py-3 mt-8 text-sm cursor-pointer disabled:cursor-not-allowed ${
                       canAddToCart
                         ? "bg-black text-white hover:bg-gray-800"
                         : "bg-gray-200 text-gray-500 cursor-not-allowed"

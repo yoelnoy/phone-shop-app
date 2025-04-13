@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone } from "../types/phone";
 import { STRINGS } from "../constants";
+import "./ggg.css";
 
 interface PhoneGridProps {
   phones: Phone[];
@@ -8,15 +9,9 @@ interface PhoneGridProps {
 
 const PhoneGrid = ({ phones }: PhoneGridProps) => {
   return (
-    <div
-      data-testid="phone-grid"
-      className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 w-full border-t border-l "
-    >
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full gap-[0.85px]">
       {phones.map((phone, index) => (
-        <div
-          key={`${phone.id}-${index}`}
-          className="border-b border-r  bg-white"
-        >
+        <div key={`${phone.id}-${index}`} className="bg-white ring">
           <Link
             to={`/product/${phone.id}`}
             className="h-80 p-4 flex flex-col items-center justify-between"

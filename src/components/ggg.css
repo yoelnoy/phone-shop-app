@@ -1,0 +1,40 @@
+.grid-item {
+  border-right: 1px solid #d1d5db;
+  /* gray-300 */
+  border-bottom: 1px solid #d1d5db;
+}
+
+/* Add top border for first row */
+.grid-item-top {
+  border-top: 1px solid #d1d5db;
+}
+
+/* Add left border for first column */
+.grid-item-left {
+  border-left: 1px solid #d1d5db;
+}
+
+/* Remove right border for last column based on responsive breakpoints */
+@media (min-width: 1280px) {
+  .grid-cols-5 .grid-item:nth-child(5n) {
+    border-right: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .grid-cols-4 .grid-item:nth-child(4n) {
+    border-right: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-cols-3 .grid-item:nth-child(3n) {
+    border-right: none;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .grid-cols-2 .grid-item:nth-child(2n) {
+    border-right: none;
+  }
+}
