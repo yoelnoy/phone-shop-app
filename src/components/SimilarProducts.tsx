@@ -15,12 +15,12 @@ interface SimilarProductsProps {
 
 const SimilarProducts = ({ products }: SimilarProductsProps) => {
   return (
-    <div className="mt-16 pl-5 2xl:pl-[22rem] scrollbar-thin">
+    <div className="mt-16 pl-5 2xl:pl-[22rem]">
       <h2 className="text-lg mb-6 font-light">
         {STRINGS.pages.productDetails.similarItems.toUpperCase()}
       </h2>
 
-      <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin">
+      <div className="flex gap-4 overflow-x-auto pb-2">
         {products.map((product, index) => (
           <Link
             key={`${product.id}-${index}`}

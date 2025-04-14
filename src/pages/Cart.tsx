@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { STRINGS } from "../constants";
+import SmartButton from "../components/SmartButton";
 
 function Cart() {
   const { items, cartCount, totalPrice, removeFromCart, updateQuantity } =
@@ -40,7 +41,7 @@ function Cart() {
                     </p>
                   </div>
 
-                  <div className="text-left space-y-1">
+                  <div className="text-left space-y-1 md:space-y-3">
                     <p className="text-sm">
                       {item.price} {STRINGS.currency.name}
                     </p>
@@ -109,31 +110,26 @@ function Cart() {
           )}
 
           <div className="flex justify-between gap-4">
-            <Link
+            <SmartButton
+              link
               to="/"
-              data-testid="cart-continue-shopping-btm"
-              className="flex-1 px-3 py-3 ring ring-black bg-white hover:ring-2 transition text-center"
-            >
-              {STRINGS.buttons.continueShopping.toUpperCase()}
-            </Link>
-            <button
+              text={STRINGS.buttons.continueShopping.toUpperCase()}
+            />
+            <SmartButton
+              text={STRINGS.buttons.pay.toUpperCase()}
               disabled={totalPrice <= 0}
-              className="flex-1 px-3 py-3 border border-black bg-black text-white hover:bg-gray-400 hover:border-gray-400 disabled:bg-gray-400 disabled:border-gray-400 transition-all"
-            >
-              {STRINGS.buttons.pay.toUpperCase()}
-            </button>
+              black
+            />
           </div>
         </div>
 
         {/* Desktop layout */}
         <div className="hidden sm:flex justify-between items-center">
-          <Link
+          <SmartButton
+            link
             to="/"
-            data-testid="cart-continue-shopping-btm"
-            className="px-3 py-3 ring ring-black bg-white w-42 hover:ring-2 transition text-center"
-          >
-            {STRINGS.buttons.continueShopping.toUpperCase()}
-          </Link>
+            text={STRINGS.buttons.continueShopping.toUpperCase()}
+          />
 
           <div className="flex items-center gap-12">
             {totalPrice > 0 && (
@@ -146,12 +142,12 @@ function Cart() {
                 </p>
               </div>
             )}
-            <button
+
+            <SmartButton
+              text={STRINGS.buttons.pay.toUpperCase()}
               disabled={totalPrice <= 0}
-              className="px-3 py-3 border border-black bg-black text-white w-42 hover:bg-gray-400 hover:border-gray-400 disabled:bg-gray-400 disabled:border-gray-400 transition-all"
-            >
-              {STRINGS.buttons.pay.toUpperCase()}
-            </button>
+              black
+            />
           </div>
         </div>
       </div>

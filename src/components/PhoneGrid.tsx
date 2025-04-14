@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone } from "../types/phone";
 import { STRINGS } from "../constants";
-import "./ggg.css";
 
 interface PhoneGridProps {
   phones: Phone[];
