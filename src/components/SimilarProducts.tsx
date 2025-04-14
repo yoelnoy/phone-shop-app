@@ -15,7 +15,7 @@ interface SimilarProductsProps {
 
 const SimilarProducts = ({ products }: SimilarProductsProps) => {
   return (
-    <div className="mt-16 pl-5 2xl:pl-[22rem]">
+    <div className="mt-16 pl-5 xl:pl-[11rem] 2xl:pl-[22rem]">
       <h2 className="text-lg mb-6 font-light">
         {STRINGS.pages.productDetails.similarItems.toUpperCase()}
       </h2>

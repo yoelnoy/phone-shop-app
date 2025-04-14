@@ -43,7 +43,7 @@ function PhoneDetails() {
             </button>
           </div>
 
-          <div className="w-full max-w-[1200px] px-5 2xl:ml-[22rem] 2xl:px-0">
+          <div className="w-full max-w-[1200px] mx-auto px-5 2xl:ml-[22rem] 2xl:px-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:py-28">
               <div className="flex justify-center md:justify-start">
                 <img
