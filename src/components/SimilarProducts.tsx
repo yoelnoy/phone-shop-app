@@ -20,12 +20,12 @@ const SimilarProducts = ({ products }: SimilarProductsProps) => {
         {STRINGS.pages.productDetails.similarItems.toUpperCase()}
       </h2>
 
-      <div className="flex gap-4 overflow-x-auto pb-2">
+      <div className="flex overflow-x-auto pb-2">
         {products.map((product, index) => (
           <Link
             key={`${product.id}-${index}`}
             to={`/product/${product.id}`}
-            className="min-w-[320px] h-80 bg-white p-4 flex flex-col items-center justify-between border border-gray-300 rounded-sm"
+            className="min-w-[320px] h-80 bg-white p-4 flex flex-col items-center justify-between border border-gray-500"
           >
             <div className="w-full h-[250px] flex justify-center items-center">
               <img
